@@ -67,11 +67,6 @@ Due to time and hardware constraints, I implemented a focused experimental setup
 - **Implementation**: Use IoU scores as reward signals for reinforcement learning
 - **Goal**: Align code generation with geometric accuracy objectives
 
-### 5. **Multi-stage Training Pipeline**
-- Stage 1: Syntax and structure learning
-- Stage 2: Shape-aware fine-tuning with IoU-based rewards
-- Stage 3: Domain-specific geometric pattern optimization
-
 ## 📋 Detailed Evaluation Logs
 
 <details>
@@ -126,24 +121,6 @@ Successful Samples: 20/20
 ```
 
 </details>
-
-## 🎯 Key Insights & Conclusions
-
-### Strengths
-1. **Perfect Syntax Generation**: 100% VSR demonstrates robust code structure learning
-2. **Consistent Output**: All samples produced valid, executable CadQuery code
-3. **Proof of Concept**: Successfully bridges vision-to-CAD-code gap
-
-### Limitations  
-1. **Shape Accuracy**: Low IoU (0.052) due to limited training data
-2. **Training Scale**: 1k samples insufficient for complex geometric understanding
-3. **Geometric Complexity**: CAD objects require precise spatial relationships
-
-### Technical Achievement
-Despite computational constraints, this experiment successfully demonstrates:
-- Feasibility of vision-to-CAD-code generation
-- Effectiveness of instruction-tuned VLMs for structured code output
-- Clear pathway for scaling to production-quality results
 
 ---
 
