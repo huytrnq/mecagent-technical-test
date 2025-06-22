@@ -12,8 +12,8 @@ MODEL_ID = "Qwen/Qwen2.5-VL-3B-Instruct"
 CACHE_DIR = "/storage/Users/huy/caches"
 DATA_CACHE_DIR = "data"
 NUM_TRAIN_SAMPLES = 1000
-NUM_VAL_SAMPLES = 100
-OUTPUT_DIR = "Cadquery_2"
+NUM_VAL_SAMPLES = 20
+OUTPUT_DIR = "Cadquery"
 
 # Training parameters
 NUM_EPOCHS = 1

@@ -125,3 +125,56 @@ Successful Samples: 20/20
 ---
 
 **Next Steps**: Scale training data, implement shape-aware training objectives, and deploy multi-stage optimization pipeline for production deployment.
+
+
+## 🔧 How to Run Validation
+
+### Download Model Weights
+
+First, download the fine-tuned model weights from Google Drive:
+
+- **Download Link**: [Model Weights](https://drive.google.com/drive/folders/1xhU2EGhuIsWowo4TEM5MOssDYA6EK1Al?usp=sharing)
+- Extract the downloaded files to the `Cadquery/checkpoint-125/` directory in your project
+
+### Install Dependencies
+
+Ensure you have the required libraries installed:
+
+```bash
+uv sync
+```
+
+### Prerequisites
+
+- **Model Checkpoint**: Fine-tuned adapter weights (located in `Cadquery/checkpoint-125/`)
+
+### Quick Start
+
+```bash
+# Run validation with default settings (20 samples)
+python validate.py
+```
+
+### Configuration Options
+
+The validation script can be customized by modifying variables in `validate.py`:
+
+```python
+# === Configuration ===
+ADAPTER_PATH = "Cadquery/checkpoint-125"  # Path to fine-tuned adapter
+NUM_SAMPLES = 20                             # Number of test samples to evaluate
+```
+
+### Script Workflow
+
+1. **Model Loading**: Loads base Qwen2.5-VL-3B model + fine-tuned PEFT adapter
+2. **Dataset Loading**: Downloads and prepares test samples from GenCAD-Code dataset
+3. **Inference**: Generates CadQuery code for each test image
+4. **Evaluation**: Computes two key metrics:
+   - **Valid Syntax Rate (VSR)**: Percentage of syntactically correct generated code
+   - **IoU (Intersection over Union)**: Shape similarity between generated and ground truth meshes
+
+### Performance Notes
+
+- **Runtime**: ~5-10 minutes for 20 samples (depending on GPU)
+- **IoU Calculation**: Computationally intensive due to mesh generation

@@ -14,7 +14,7 @@ from metrics.best_iou import get_iou_best, evaluate_codes
 from metrics.valid_syntax_rate import evaluate_syntax_rate
 
 # === Configuration ===
-ADAPTER_PATH = "Cadquery_2/checkpoint-125"
+ADAPTER_PATH = "Cadquery/checkpoint-125"
 NUM_SAMPLES = 20
 
 def load_finetuned_model():
